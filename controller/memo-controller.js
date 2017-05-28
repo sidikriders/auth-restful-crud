@@ -46,7 +46,9 @@ function lihatMemo(req, res, next) {
         if (err) {
           console.log(err);
         } else {
-          if (result.user_id === currID) {
+          console.log(result.user_id);
+          console.log(currID);
+          if (result.user_id == currID) {
             res.render('memo', {data: result})
           } else {
             res.send('mohon maaf yang bisa lihat hanya yang punya aja')
@@ -69,7 +71,7 @@ function editMemo(req, res, next) {
       Memo.findOne({
         _id: req.params.id
       }, (err, result) => {
-        if (result.user_id === currID) {
+        if (result.user_id == currID) {
           res.render('memo-edit', {data: result})
         } else {
           res.send('wkwkw mau ngerjain ya??')
@@ -105,10 +107,10 @@ function hapusMemo(req, res, next) {
       let currID = currToken._id;
       let currUsername = currToken.username;
       let currEmail = currToken.email
-      Memo.find({
+      Memo.findOne({
         _id: req.params.id
       }, (err, resultCheck) => {
-        if (resultCheck.user_id === currID) {
+        if (resultCheck.user_id == currID) {
           Memo.remove({
             _id: req.params.id
           }, (err, result) => {
