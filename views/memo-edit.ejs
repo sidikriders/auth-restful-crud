@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MEMO | CMU</title>
+  </head>
+  <body>
+    <h1>Edit Memo</h1>
+      <form class="form" action="/memo/edit/<%=data._id%>" method="post">
+        <input type="text" name="updateTitle" value="<%=data.title%>">
+        <br><br>
+        <textarea name="updateIsi" rows="8" cols="80"><%=data.isi%></textarea>
+        <br><br>
+        <input type="submit" value="Update">
+      </form>
+  </body>
+</html>

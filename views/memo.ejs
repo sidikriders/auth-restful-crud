@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MEMO | CMU</title>
+  </head>
+  <body>
+    <h1>Buat Memo Baru</h1>
+    <%if (data == null) {%>
+      <form class="form" action="/memo/new" method="post">
+        <input type="text" name="newMemoTitle" placeholder="Title Memomu">
+        <br><br>
+        <textarea name="newMemoIsi" placeholder="Isi Memomu" rows="8" cols="80"></textarea>
+        <br><br>
+        <input type="submit" value="Create">
+      </form>
+    <%} else {%>
+      <h3><%=data.title%></h3>
+      <p><%=data.isi%></p>
+      <a href="/memo/edit/<%=data._id%>">Edit</a>
+    <%}%>
+  </body>
+</html>

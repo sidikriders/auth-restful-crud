@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SignUp | CMU</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Silahkan Masukkan data-data yang dibutuhkan untuk membuat akun baru</h3>
+      <br><br>
+      <h4><%=msg%></h4>
+      <form class="" action="signup" method="post">
+        <label for="username">
+          <input type="text" name="newUser" placeholder="username">
+        </label>
+        <br><br>
+        <label for="email">
+          <input type="email" name="newEmail" placeholder="email">
+        </label>
+        <br><br>
+        <label for="password">
+          <input type="password" name="newPass" placeholder="password">
+        </label>
+        <br><br>
+        <input type="submit" value="Sign Me Up!">
+      </form>
+    </div>
+  </body>
+</html>
